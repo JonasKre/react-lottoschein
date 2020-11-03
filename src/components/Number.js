@@ -11,7 +11,7 @@ const Field = styled.button`
   border-radius: 5px;
   cursor: pointer;
   padding: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   background-color: #f2f2fb;
   color: #555;
   outline: none;
@@ -35,6 +35,10 @@ const Field = styled.button`
     opacity: 0.5;
   }
 
+  @media only screen and (min-width: 480px) {
+    font-size: 1.2rem;
+  }
+
   @keyframes pulse {
     0% {
       box-shadow: 0 0 0 0 rgba(37, 45, 107, 0.5);
@@ -49,6 +53,7 @@ const Field = styled.button`
 `;
 
 function Number(props) {
+  console.log(props);
   const classes = {
     selected: props.isSelected ? "selected" : "",
     isActive: !props.isSelected && props.isFinished ? "inactive" : "",

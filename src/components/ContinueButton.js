@@ -15,6 +15,10 @@ const ButtonOuter = styled.button`
   max-width: 250px;
   width: 100%;
   font-family: inherit;
+
+  @media only screen and (min-width: 480px) {
+    max-width: 285px;
+  }
 `;
 
 const ButtonText = styled.span`
@@ -25,17 +29,22 @@ const ButtonText = styled.span`
   text-align: center;
   z-index: 500;
   color: #fff;
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   font-weight: 300;
+
+  @media only screen and (min-width: 480px) {
+    font-size: 1.3rem;
+  }
 `;
 
-const ButtonInner = styled.div`
+const ButtonInner = styled.span`
   z-index: 1;
   position: absolute;
   top: 0;
   left: 0;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  width: ${(props) => props.fillWidth}%;
+  width: ${({ selectedFields, maxFields }) =>
+    (selectedFields.length / maxFields) * 100}%;
   background-color: ${(props) =>
     props.fillWidth < 100 ? "#c9cffa" : "#252d6b"};
   height: 100%;
@@ -43,9 +52,13 @@ const ButtonInner = styled.div`
 
 function ContinueButton(props) {
   return (
-    <ButtonOuter disabled={props.isDisabled} onClick={props.handleClick}>
-      <ButtonText>Weiter</ButtonText>
-      <ButtonInner fillWidth={props.fillWidth}></ButtonInner>
+    <ButtonOuter onClick={props.handleClick}>
+      <ButtonText>
+        {props.selectedFields.length < 6
+          ? `${props.selectedFields.length}/${props.maxFields} ausgewählt`
+          : "Weiter"}
+      </ButtonText>
+      <ButtonInner {...props}></ButtonInner>
     </ButtonOuter>
   );
 }

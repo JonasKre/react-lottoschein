@@ -6,13 +6,17 @@ const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  width: 100%;
   flex: 0 0 100%;
+  width: 100%;
+  padding: 0 1rem;
   transform: translateX(${(props) => (props.isFinished ? "-100%" : "0")});
-  padding: 0 2rem;
   transition: transform 1s ease-in;
+
+  @media only screen and (min-width: 480px) {
+    padding: 0 2rem;
+  }
 `;
 
 export default function Container(props) {
-  return <Wrapper isFinished={props.isFinished}>{props.children}</Wrapper>;
+  return <Wrapper {...props}>{props.children}</Wrapper>;
 }

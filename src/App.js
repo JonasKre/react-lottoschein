@@ -21,7 +21,7 @@ function App() {
     if (selected.includes(value)) {
       setSelected(selected.filter((item) => item !== value));
     } else {
-      if (selected.length === max) return;
+      if (selected.length === max) return false;
       setSelected([value, ...selected]);
     }
   }
@@ -37,6 +37,8 @@ function App() {
       <Number
         key={i}
         value={i}
+        selectedFields={selected}
+        maxFields={max}
         isSelected={selected.includes(i)}
         handleClick={handleClick}
       >
@@ -51,13 +53,14 @@ function App() {
       <Container isFinished={finished}>
         <Board>{fields}</Board>
         <ContinueButton
-          fillWidth={(selected.length / max) * 100}
+          selectedFields={selected}
+          maxFields={max}
           isDisabled={selected.length < max}
           handleClick={handleContinue}
         />
       </Container>
       <Container isFinished={finished}>
-        <Result selection={selected.sort((a, b) => a - b)} />
+        <Result selection={selected} />
       </Container>
     </Fragment>
   );
