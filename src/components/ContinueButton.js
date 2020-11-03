@@ -52,7 +52,10 @@ const ButtonInner = styled.span`
 
 function ContinueButton(props) {
   return (
-    <ButtonOuter onClick={props.handleClick}>
+    <ButtonOuter
+      onClick={props.handleClick}
+      disabled={props.selectedFields.length < 6}
+    >
       <ButtonText>
         {props.selectedFields.length < 6
           ? `${props.selectedFields.length}/${props.maxFields} ausgewählt`

@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
+  grid-template-columns: repeat(7, 1fr);
+  grid-gap: 5px;
   background-color: #fff;
   width: 100%;
   max-width: 500px;

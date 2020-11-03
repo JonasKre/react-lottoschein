@@ -20,7 +20,7 @@ const ResultList = styled.ul`
   padding: 0;
 
   li {
-    padding: 1rem;
+    padding: 0.8rem;
     margin-bottom: 1rem;
     font-size: 1rem;
     text-align: center;

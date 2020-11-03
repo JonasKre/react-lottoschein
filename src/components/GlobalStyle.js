@@ -20,6 +20,18 @@ const GlobalStyle = createGlobalStyle`
     background-color: #F2F2FB;
     font-family: 'Roboto', sans-serif;
   }
+
+  @keyframes pulse {
+    0% {
+      box-shadow: 0 0 0 0 rgba(37, 45, 107, 0.5);
+    }
+    70% {
+      box-shadow: 0 0 0 10px rgba(37, 45, 107, 0);
+    }
+    100% {
+      box-shadow: 0 0 0 0 rgba(37, 45, 107, 0);
+    }
+  }
 `;
 
 export default GlobalStyle;
