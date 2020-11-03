@@ -32,6 +32,21 @@ const Button = styled.button`
     transition: left 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     background-color: var(--primary-color);
   }
+
+  &::after {
+    content: "";
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    padding: 2px;
+    display: inline-block;
+    position: absolute;
+    right: ${(props) => (props.selectedFields.length < 6 ? "-100%" : "70px")};
+    top: 50%;
+    transform: rotate(-45deg) translateY(-50%);
+    transition: right 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    height: 4px;
+    width: 4px;
+  }
 `;
 
 function ContinueButton(props) {
