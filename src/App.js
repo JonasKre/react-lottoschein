@@ -37,8 +37,6 @@ function App() {
       <Number
         key={i}
         value={i}
-        selectedFields={selected}
-        maxFields={max}
         isSelected={selected.includes(i)}
         isFinished={selected.length === max}
         handleClick={handleClick}
@@ -61,7 +59,7 @@ function App() {
         />
       </Container>
       <Container isFinished={finished}>
-        <Result selection={selected} />
+        <Result selectedFields={selected} />
       </Container>
     </Fragment>
   );

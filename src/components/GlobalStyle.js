@@ -5,6 +5,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
   }
 
+  :root {
+    --primary-color: #252d6b;
+    --secondary-color: #252d6b;
+  }
+
   html, body {
       margin: 0;
   }

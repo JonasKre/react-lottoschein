@@ -38,12 +38,12 @@ const ResultList = styled.ul`
   }
 `;
 
-export default function Result({ selection }) {
+export default function Result({ selectedFields }) {
   return (
     <Fragment>
       <ResultHeading>Ihre Auswahl:</ResultHeading>
       <ResultList>
-        {selection
+        {selectedFields
           .sort((a, b) => a - b)
           .map((value, i) => (
             <li key={i}>{value}</li>

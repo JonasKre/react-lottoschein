@@ -25,8 +25,8 @@ const Field = styled.button`
   }
 
   &.selected {
-    border: 2px solid #252d6b;
-    background-color: #252d6b;
+    border: 2px solid var(--primary-color);
+    background-color: var(--primary-color);
     color: #fff;
     animation: pulse 1.2s;
   }
