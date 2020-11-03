@@ -40,6 +40,7 @@ function App() {
         selectedFields={selected}
         maxFields={max}
         isSelected={selected.includes(i)}
+        isFinished={selected.length === max}
         handleClick={handleClick}
       >
         {i}
