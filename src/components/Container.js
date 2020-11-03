@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Wrapper = styled.div`
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -10,9 +11,9 @@ const Wrapper = styled.div`
   width: 100%;
   padding: 0 1rem;
   transform: translateX(${(props) => (props.isFinished ? "-100%" : "0")});
-  transition: transform 1s ease-in;
+  transition: transform 0.8s ease-in;
 
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: 768px) {
     padding: 0 2rem;
   }
 `;

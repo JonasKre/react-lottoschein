@@ -35,13 +35,12 @@ const Field = styled.button`
     opacity: 0.5;
   }
 
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: 500px) {
     font-size: 1.2rem;
   }
 `;
 
 function Number(props) {
-  console.log(props);
   const classes = {
     selected: props.isSelected ? "selected" : "",
     isActive: !props.isSelected && props.isFinished ? "inactive" : "",

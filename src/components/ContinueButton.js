@@ -15,10 +15,6 @@ const ButtonOuter = styled.button`
   max-width: 250px;
   width: 100%;
   font-family: inherit;
-
-  @media only screen and (min-width: 480px) {
-    max-width: 285px;
-  }
 `;
 
 const ButtonText = styled.span`
@@ -31,15 +27,12 @@ const ButtonText = styled.span`
   color: #fff;
   font-size: 1.1rem;
   font-weight: 300;
-
-  @media only screen and (min-width: 480px) {
-    font-size: 1.3rem;
-  }
 `;
 
 const ButtonInner = styled.span`
   z-index: 1;
   position: absolute;
+  display: block;
   top: 0;
   left: 0;
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);

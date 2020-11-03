@@ -9,8 +9,7 @@ import Result from "./components/Result";
 function App() {
   // Constants
   const fields_num = 49,
-    max = 6,
-    fields = [];
+    max = 6;
 
   // State
   const [selected, setSelected] = useState([]);
@@ -32,6 +31,7 @@ function App() {
   }
 
   // Initialize number fields
+  const fields = [];
   for (let i = 1; i <= fields_num; i++) {
     fields.push(
       <Number

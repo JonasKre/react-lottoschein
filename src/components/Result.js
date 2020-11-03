@@ -7,7 +7,7 @@ const ResultHeading = styled.h1`
   color: #252d6b;
   margin: 0 0 1rem;
 
-  @media only screen and (min-width: 480px) {
+  @media only screen and (min-width: 560px) {
     font-size: 4rem;
   }
 `;
@@ -18,6 +18,7 @@ const ResultList = styled.ul`
   grid-gap: 0.5rem;
   list-style-type: none;
   padding: 0;
+  margin: 0;
 
   li {
     padding: 0.8rem;
@@ -29,7 +30,7 @@ const ResultList = styled.ul`
     color: #555;
     box-shadow: 0px 15px 10px rgba(0, 0, 0, 0.05);
 
-    @media only screen and (min-width: 480px) {
+    @media only screen and (min-width: 560px) {
       padding: 1.5rem;
       grid-gap: 1rem;
       font-size: 3rem;
@@ -44,8 +45,8 @@ export default function Result({ selection }) {
       <ResultList>
         {selection
           .sort((a, b) => a - b)
-          .map((value) => (
-            <li>{value}</li>
+          .map((value, i) => (
+            <li key={i}>{value}</li>
           ))}
       </ResultList>
     </Fragment>
