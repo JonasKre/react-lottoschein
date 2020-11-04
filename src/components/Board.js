@@ -14,8 +14,6 @@ const StyledDiv = styled.div`
 
   @media only screen and (min-width: 420px) {
     margin: 3rem 0;
-
-    grid-template-columns: repeat(7, 1fr);
   }
 `;
 
