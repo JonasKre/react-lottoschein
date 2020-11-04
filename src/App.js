@@ -4,6 +4,7 @@ import Container from "./components/Container";
 import Board from "./components/Board";
 import Number from "./components/Number";
 import ContinueButton from "./components/ContinueButton";
+import Button from "./components/Button";
 import Result from "./components/Result";
 
 function App() {
@@ -25,9 +26,9 @@ function App() {
     }
   }
 
-  // Continue to result
-  function handleContinue() {
-    setFinished(true);
+  // Handle click on finish / back buttons
+  function toggleFinished() {
+    setFinished(!finished);
   }
 
   // Initialize number fields
@@ -54,12 +55,12 @@ function App() {
         <ContinueButton
           selectedFields={selected}
           maxFields={max}
-          isDisabled={selected.length < max}
-          handleClick={handleContinue}
+          handleClick={toggleFinished}
         />
       </Container>
       <Container isFinished={finished}>
         <Result selectedFields={selected} />
+        <Button handleClick={toggleFinished}>Auswahl ändern</Button>
       </Container>
     </Fragment>
   );

@@ -1,20 +1,21 @@
-import React from "react";
 import styled from "styled-components";
 
-const Field = styled.button`
+const StyledButton = styled.button`
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: inherit;
+  font-size: 1rem;
   border: 2px solid transparent;
   border-radius: 5px;
+  outline: none;
   cursor: pointer;
   padding: 0.5rem;
-  font-size: 1rem;
-  background-color: #f2f2fb;
+  background-color: var(--tertiary-color);
   color: #555;
-  outline: none;
+  transition: all 0.2s ease-in;
+  z-index: 1;
   overflow: hidden;
 
   &::before {
@@ -24,15 +25,35 @@ const Field = styled.button`
     vertical-align: top;
   }
 
-  &.selected {
-    border: 2px solid var(--primary-color);
-    background-color: var(--primary-color);
+  &:hover:not(.inactive):not(.selected) {
+    background-color: #9da0b1;
     color: #fff;
-    animation: pulse 1.2s;
+  }
+
+  &.selected {
+    color: #fff;
+    animation: pulse 0.8s;
+
+    &::after {
+      font-family: "Font Awesome 5 Free";
+      z-index: -1;
+      content: "\f00d";
+      font-weight: 900;
+      font-size: 2.5em;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      color: #848495;
+
+      @media only screen and (min-width: 400px) {
+        font-size: 3.75rem;
+      }
+    }
   }
 
   &.inactive {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 
   @media only screen and (min-width: 500px) {
@@ -40,20 +61,18 @@ const Field = styled.button`
   }
 `;
 
-function Number(props) {
-  const classes = {
-    selected: props.isSelected ? "selected" : "",
-    isActive: !props.isSelected && props.isFinished ? "inactive" : "",
-  };
+export default function Number(props) {
+  const classes = [
+    props.isSelected ? "selected" : "",
+    !props.isSelected && props.isFinished ? "inactive" : "",
+  ];
 
   return (
-    <Field
-      className={Object.values(classes).join(" ")}
+    <StyledButton
+      className={[...classes]}
       onClick={() => props.handleClick(props.value)}
     >
       {props.children}
-    </Field>
+    </StyledButton>
   );
 }
-
-export default Number;
