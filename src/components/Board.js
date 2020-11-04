@@ -11,10 +11,6 @@ const StyledDiv = styled.div`
   padding: 0.5rem;
   margin: 2rem 0;
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
-
-  @media only screen and (min-width: 420px) {
-    margin: 3rem 0;
-  }
 `;
 
 export default function Board(props) {
