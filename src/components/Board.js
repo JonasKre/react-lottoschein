@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const StyledDiv = styled.div`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(7, 1fr);
   grid-gap: 5px;
   max-width: 500px;
   width: 100%;

@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   flex: 0 0 100%;
   width: 100%;
-  padding: 0 2rem;
+  padding: 0 1rem;
   transform: translateX(${(props) => (props.isFinished ? "-100%" : "0")});
   transition: transform 0.8s ease-in;
 `;
